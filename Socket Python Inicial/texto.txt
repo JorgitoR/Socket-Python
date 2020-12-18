@@ -1,0 +1,52 @@
+PORT = 5050 
+#SERVER = "192.168.1.211"
+SERVER = socket.gethostbyname(socket.gethostname()) #automaticamente toma nuestro ipv4
+print(SERVER)
+print(socket.gethostname()) #the name of our computer in the network
+
+#necesitamos saber la direcion ipv4. cmd -> ipconfig
+
+time.sleep(1) #we wait one second and then print out hello 
+print("hello")
+
+
+
+def start():
+    pass 
+
+    inside start I am going is essentially write the code that's goingto allow
+    our server to start listening  for connections and then handling those connections 
+    and passing them to handle clients which will run in a new threat.
+
+    conn, addr = server.accept() this line of code here for a new connection to the server when
+    a new connections occurs we will store the address of the connection, so what Ip adress 
+    and what port it came from and then we will store an actual object that´s going to allowus
+    to senf information back to the connection. 
+
+
+
+def handle_client(conn, addr):
+    pass 
+
+    this function her are handle all the communications between the clients in between
+    the server from now on so this little function here is meant to simply handle 
+    new connection and kind of  distribute those to where they need to go whereas 
+    here will handle the individual connection between the client and the server so one client 
+    and one server.
+    this is gonna run for each client 
+
+
+
+    while connected:
+        msg = conn.recv() # we don't pass this line of code until we receive a message from 
+        our client 
+
+    How are we gonna know how many bytes to receive from the client 
+    
+HEADER = 64 #bytes
+Length of the message that's gonna come with 64 bytes 
+
+
+so if we want to send a message back to the client what I 'll do is I'll just implement in the 
+function handle_client 
+conn.send("Msg received".encode(FORMAT))
